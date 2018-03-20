@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>RepkaCH</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="OpenSans.css">
+        <link rel="stylesheet"  type="text/css" href="stylem.css">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <center>
+            <a href="//vk.com/repkach"><div style="font-size: 5rem; font-weight: 400;">RepkaCH</div></a>
+            <div id = "polynom"></div>
+            Найдите корни<br>
+            <input type="text" id = "firsta" placeholder = "Real part"><br>
+          <div style="margin-bottom: 0.75rem;"> <input type="text" id = "firstb" placeholder = "Imaginary part"></div>
+            <input type="text" id = "seconda" placeholder = "Real part"><br>
+            <input type="text" id = "secondb" placeholder = "Imaginary part"><br>
+            <br>
+            <button onclick="check()">submit</button>
+        </center>
+        <div style="height: 40vh"></div>
+        <footer>
+          Copyrasted by Batya(c) 2K16 - 2K!8
+        </footer>
+        <script>
+            function abs(x){
+              if (x < 0) { x = -x; }
+                return x;
+            }
+            function getRandom() {
+              if(Math.random() > 0.5){
+                return Math.ceil(Math.random() * 10000);
+              } else {
+                return -Math.ceil(Math.random() * 10000);
+              }
+            }
+            function swap(a, b) {
+              var tmp;
+              a = tmp;
+              a = b;
+              b = tmp;
+            }
+            form1 = "";
+            form2 = "";
+            form3 = "";
+            form4 = "";
+            var x1, x2, y1, y2, a, b, c, trash, eps = 0.001;
+            function gen(){
+                a = getRandom();
+                b = getRandom();
+                c = getRandom();
+                if (b * b - 4 * a * c >= 0){
+                    flag = 1;
+                    x1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+                    x2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+                    y1 = 0;
+                    y2 = 0;
+                } else {
+                    flag = 0;
+                    x1 = (-b / (2 * a));
+                    y1 = (Math.sqrt(abs(b * b - 4 * a * c)) / (2 * a));
+                    y2 = -(Math.sqrt(abs(b * b - 4 * a * c))) / (2 * a);
+                    x2 = (-b / (2 * a));
+                }
+                if (flag == 1 && x1 > x2) {
+                    swap(x1, x2);
+                }
+                if (flag == 0 && y1 > y2) {
+                    swap(y1, y2);
+                }
+            }
+            gen();
+            if(b > 0 && c > 0){
+              polynom.innerHTML = a + "x<sup>2</sup> + " + b + "x + " + c + " = 0";
+            }
+            if(b > 0 && c < 0){
+              polynom.innerHTML = a + "x<sup>2</sup> + " + b + "x - " + -c + " = 0";
+            }
+            if(b < 0 && c > 0){
+              polynom.innerHTML = a + "x<sup>2</sup> - " + -b + "x + " + c + " = 0";
+            }
+            if(b < 0 && c < 0){
+              polynom.innerHTML = a + "x<sup>2</sup> - " + -b + "x - " + -c + " = 0";
+            }
+            function check(){
+                form1 = firsta.value;
+                form3 = firstb.value;
+                form2 = seconda.value;
+                form4 = secondb.value;
+                if(form3 == ""){
+                  form3 = 0;
+                } else {
+                  form3 = parseFloat(form3);
+                }
+                if(form4 == ""){
+                  form4 = 0;
+                } else {
+                  form4 = parseFloat(form4);
+                }
+                if(form1 == "Тетельман" || form1 == "тетельман"){
+                } else {
+                  form1 = parseFloat(form1);
+                }
+                form2 = parseFloat(form2);
+                if (form1 > form2){
+                  swap(form1, form2);
+                }
+                if (form3 > form4){
+                  swap(form3, form4);
+                }
+                console.log(x1, x2, y1, y2, form1, form2, form3, form4);
+                if (((abs(form1 - x1) < eps) && (abs(form2 - x2) < eps) && (abs(form3 - y1) < eps) && (abs(form4 - y2) < eps)) || (form1 == "Тетельман") || (form1 == "тетельман")) {
+                    window.location.href = "https://vk.com/pinkodch"
+                } else {
+                    alert("NETRUEREPKACH");
+                }
+            }
+        </script>
+    </body>
+</html>
