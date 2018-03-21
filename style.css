@@ -42,6 +42,8 @@ button:active {
   border-color: #FBC02D;
 }
 button:focus {
+  background-color: #FBC02D;
+  border-color: #FBC02D;
   outline: none;
 }
 a{text-decoration: none; color: black;}
