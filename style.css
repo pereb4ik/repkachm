@@ -28,6 +28,7 @@ button {
   padding:0.4rem;
   cursor: pointer;
   user-select: none;
+  -webkit-user-select: none;
   transition-duration: 0.3s;
   width: 80%;
 }
