@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=cyrillic');
+body {
+  background: #80DEEA  url("newrepkah.svg") no-repeat center fixed;
+  background-size: cover;
+  font: bold 1rem 'Open Sans';
+}
+header {
+  font-size: 5rem;
+  font-weight: 400;
+}
+input {
+  font: bold 0.8rem 'Open Sans';
+  padding: 0.1rem 0.1rem 0.1rem 0.45rem;
+  border-radius:100px;
+  border: none;
+  outline: none;
+  width: 80%;
+}
+#firstb {
+  margin-bottom: 0.75rem;
+}
+button {
+  font: bold 1rem 'Open Sans';
+  background-color: #fdd835;
+  border: solid #fdd835;
+  outline: none;
+  border-radius:100px;
+  padding:0.4rem;
+  cursor: pointer;
+  user-select: none;
+  transition-duration: 0.3s;
+  width: 80%;
+}
+button:hover {
+  background-color: #FFEB3B;
+  border-color: #FFEB3B;
+}
+button:active {
+  background-color: #FBC02D;
+  border-color: #FBC02D;
+}
+a{text-decoration: none; color: black;}
