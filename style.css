@@ -20,33 +20,43 @@ input {
 }
 button {
   font: bold 1rem 'Open Sans', Arial;
-  background-color: #fdd835;
-  border: solid #fdd835;
+  border: none;
   outline: none;
   border-radius:100px;
-  padding:0.4rem;
+  padding:0.52rem;
   cursor: pointer;
+  position: relative;
   user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition-duration: 0.3s;
   width: 80%;
 }
-button:hover {
-  background-color: #FFEB3B;
-  border-color: #FFEB3B;
+button:not(:disabled) {
+  background: #FFEB3B;
 }
-button:active {
-  background-color: #FBC02D;
-  border-color: #FBC02D;
+button:not(:disabled):before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #fdd835;
+    border-radius: 100px;
 }
-button:focus {
-  background-color: #FBC02D;
-  border-color: #FBC02D;
-  outline: none;
+button:not(:disabled):hover:before, button:not(:disabled):active:before{
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+button:not(:disabled):active{
+  background: #FBC02D;
+}
+.text {
+  position: relative;
+  vertical-align: middle;
 }
 a{text-decoration: none; color: black;}
-/* latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -54,7 +64,6 @@ a{text-decoration: none; color: black;}
   src: local('Open Sans Regular'), local('OpenSans-Regular'), url(400latin.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* cyrillic */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -62,7 +71,6 @@ a{text-decoration: none; color: black;}
   src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(400cyril.woff2) format('woff2');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-/* latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
