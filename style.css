@@ -29,7 +29,6 @@ button {
   position: relative;
   user-select: none;
   -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
   transition-duration: 0.3s;
   width: 80%;
 }
