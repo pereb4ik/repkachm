@@ -1,5 +1,5 @@
 body {
-  background: #80DEEA  url("newrepkah.svg") no-repeat center fixed;
+  background: #80DEEA  url("repkalogo.svg") no-repeat center fixed;
   background-size: cover;
   font: bold 1rem 'Open Sans', Arial;
 }
@@ -20,6 +20,7 @@ input {
 }
 button {
   font: bold 1rem 'Open Sans', Arial;
+  background-color: #fdd835;
   border: none;
   outline: none;
   border-radius:100px;
@@ -32,25 +33,11 @@ button {
   transition-duration: 0.3s;
   width: 80%;
 }
-button:not(:disabled) {
-  background: #FFEB3B;
+button:hover{
+  background-color: #FFEB3B;
 }
-button:not(:disabled):before {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background: #fdd835;
-    border-radius: 100px;
-}
-button:not(:disabled):hover:before, button:not(:disabled):active:before{
-  opacity: 0;
-  transition-duration: 0.3s;
-}
-button:not(:disabled):active{
-  background: #FBC02D;
+button:active{
+  background-color: #FBC02D;
 }
 .text {
   position: relative;
